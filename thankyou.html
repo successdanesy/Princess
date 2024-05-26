@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(15px);
+            z-index: -1;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .final-message {
+            font-size: 3em;
+            color: #800080;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #800080;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: #660066;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .content {
+                width: 70%;
+                max-width: 800px;
+            }
+
+            .final-message {
+                font-size: 4em;
+            }
+
+            .back-home {
+                padding: 15px 30px;
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="final-message">Thank you Baby!</h1>
+        <a href="homepage.html" class="back-home">Back to Home</a>
+    </div>
+</body>
+</html>

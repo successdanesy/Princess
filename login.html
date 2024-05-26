@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(10px); /* Adjust the blur radius as needed */
+            z-index: -1;
+        }
+
+        .content {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 40px 20px; /* Increased padding for a better shape */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+            position: relative; /* For positioning the return button */
+            z-index: 1; /* Ensure it's above the background */
+            width: 90%;
+            max-width: 400px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .login-button {
+            background-color: #800080; /* Purple background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px;
+            font-size: 16px; /* Font size */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-top: 20px; /* Space above the button */
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s; /* Delays the button animation by 1 second */
+        }
+
+        .login-button:hover {
+            background-color: #660066; /* Darker purple on hover */
+        }
+
+        .return-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 24px; /* Font size for the icon */
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 0.5s; /* Delays the button animation by 0.5 seconds */
+        }
+
+        .return-home:hover {
+            color: #000; /* Darker color on hover */
+        }
+
+        .hint {
+            color: red;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1.5s; /* Delays the input animation by 1.5 seconds */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .content {
+                width: 70%;
+                max-width: 600px;
+            }
+
+            .login-button {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <button class="return-home" onclick="returnHome()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h1>Login Page</h1>
+        <form onsubmit="return validateLogin()">
+            <input type="text" id="username" placeholder="Username" required><br><br>
+            <input type="password" id="password" placeholder="Password" required><br><br>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <p class="hint">Hint: Username, I call you that often. Password, our anniversary.</p>
+    </div>
+
+    <script>
+        function returnHome() {
+            window.location.href = 'welcome.html';
+        }
+
+        function validateLogin() {
+            // Add your validation logic here
+            // For demonstration purposes, we'll just redirect to homepage.html
+            window.location.href = 'homepage.html';
+            return false; // Prevent the default form submission
+        }
+    </script>
+</body>
+</html>
