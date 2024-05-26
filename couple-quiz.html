@@ -51,6 +51,7 @@
 
         .question {
             margin-bottom: 20px;
+            display: none; /* Initially hide all questions */
         }
 
         .question p {
@@ -77,7 +78,6 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            display: none;
         }
 
         button:hover {
@@ -169,26 +169,76 @@
         </div>
         <form id="quizForm">
             <div class="question" id="question1">
-                <p>When is our anniversary, pretty girl?</p>
-                <label><input type="radio" name="q1" value="B"> 17/04/2002</label>
-                <label><input type="radio" name="q1" value="A"> 10/02/23</label>
+                <p>1. When is our anniversary, pretty girl?</p>
+                <label><input type="radio" name="q1" value="A"> 17/04/2002</label>
+                <label><input type="radio" name="q1" value="B"> 10/02/23</label>
                 <label><input type="radio" name="q1" value="C"> 12/02/22</label>
                 <label><input type="radio" name="q1" value="D"> 31/08/21</label>
             </div>
-            <div class="question" id="question2" style="display:none;">
-                <p>What is our favorite movie to watch together?</p>
-                <label><input type="radio" name="q2" value="A"> The Notebook</label>
-                <label><input type="radio" name="q2" value="B"> Titanic</label>
-                <label><input type="radio" name="q2" value="C"> Inception</label>
-                <label><input type="radio" name="q2" value="D"> Harry Potter</label>
+            <div class="question" id="question2">
+                <p>2. What is our favorite show as a couple?</p>
+                <label><input type="radio" name="q2" value="A"> Friends</label>
+                <label><input type="radio" name="q2" value="B"> How I Met Your Mother</label>
+                <label><input type="radio" name="q2" value="C"> Baby Reindeer</label>
+                <label><input type="radio" name="q2" value="D"> Game of Thrones</label>
             </div>
-            <div class="question" id="question3" style="display:none;">
-                <p>What is our favorite restaurant?</p>
-                <label><input type="radio" name="q3" value="A"> Olive Garden</label>
-                <label><input type="radio" name="q3" value="B"> Cheesecake Factory</label>
-                <label><input type="radio" name="q3" value="C"> Red Lobster</label>
-                <label><input type="radio" name="q3" value="D"> Chili's</label>
+            <div class="question" id="question3">
+                <p>3. What is my favourite part of your body?</p>
+                <label><input type="radio" name="q3" value="A"> Eyes</label>
+                <label><input type="radio" name="q3" value="B"> Mouth</label>
+                <label><input type="radio" name="q3" value="C"> Ass</label>
+                <label><input type="radio" name="q3" value="D"> You (honestly, it's the previous option but pick this one)</label>
             </div>
+            <div class="question" id="question4">
+                <p>4. What do we do when it's 11:11?</p>
+                <label><input type="radio" name="q4" value="A"> Don't text each other</label>
+                <label><input type="radio" name="q4" value="B"> Make a wish</label>
+                <label><input type="radio" name="q4" value="C"> Call an ambulance</label>
+                <label><input type="radio" name="q4" value="D"> Go to bed</label>
+            </div>
+            <div class="question" id="question5">
+                <p>5. What time is bedtime?</p>
+                <label><input type="radio" name="q5" value="A"> 8:50pm</label>
+                <label><input type="radio" name="q5" value="B"> 1:45am</label>
+                <label><input type="radio" name="q5" value="C"> 11:25pm</label>
+                <label><input type="radio" name="q5" value="D"> 6:05pm</label>
+            </div>
+            <div class="question" id="question6">
+                <p>6. What is our favourite monster called?</p>
+                <label><input type="radio" name="q6" value="A"> Cookie Monster</label>
+                <label><input type="radio" name="q6" value="B"> The Grinch</label>
+                <label><input type="radio" name="q6" value="C"> The Kiss Monster</label>
+                <label><input type="radio" name="q6" value="D"> Ojuju Calabar</label>
+            </div>
+            <div class="question" id="question7">
+                <p>7. My favourite name for you?</p>
+                <label><input type="radio" name="q7" value="A"> Zen</label>
+                <label><input type="radio" name="q7" value="B"> Skittles</label>
+                <label><input type="radio" name="q7" value="C"> Pookie</label>
+                <label><input type="radio" name="q7" value="D"> Princess</label>
+            </div>
+            <div class="question" id="question8">
+                <p>8. Complete the sentence: "She hugged him, and gave him __"</p>
+                <label><input type="radio" name="q8" value="A"> A fist bump</label>
+                <label><input type="radio" name="q8" value="B"> A penny for his thought</label>
+                <label><input type="radio" name="q8" value="C"> A kiss on the chin</label>
+                <label><input type="radio" name="q8" value="D"> A peck on the chin</label>
+            </div>
+            <div class="question" id="question9">
+                <p>9. The first app we talked on?</p>
+                <label><input type="radio" name="q9" value="A"> Instagram</label>
+                <label><input type="radio" name="q9" value="B"> Phone App</label>
+                <label><input type="radio" name="q9" value="C"> iMessage</label>
+                <label><input type="radio" name="q9" value="D"> Tiktok</label>
+            </div>
+            <div class="question" id="question10">
+                <p>10. What club do we support?</p>
+                <label><input type="radio" name="q10" value="A"> Manchester City</label>
+                <label><input type="radio" name="q10" value="B"> Manchester United (Nyama)</label>
+                <label><input type="radio" name="q10" value="C"> Liverpool (lol)</label>
+                <label><input type="radio" name="q10" value="D"> Real Madrid</label>
+            </div>
+
             <button type="button" id="nextBtn" onclick="nextQuestion()">Next</button>
             <button type="button" id="calculateScoreBtn" onclick="calculateScore()" style="display:none;">Calculate Score</button>
         </form>
@@ -196,7 +246,7 @@
     </div>
     <script>
         let currentQuestion = 1;
-        const totalQuestions = 3;
+        const totalQuestions = 10;
 
         function returnToHomePage() {
             window.location.href = 'homepage.html';
@@ -226,13 +276,21 @@
             let score = 0;
 
             if (quizForm.q1.value === 'B') score++;
-            if (quizForm.q2.value === 'A') score++;
-            if (quizForm.q3.value === 'B') score++;
+            if (quizForm.q2.value === 'B') score++;
+            if (quizForm.q3.value === 'D') score++;
+            if (quizForm.q4.value === 'B') score++;
+            if (quizForm.q5.value === 'C') score++;
+            if (quizForm.q6.value === 'C') score++;
+            if (quizForm.q7.value === 'D') score++;
+            if (quizForm.q8.value === 'D') score++;
+            if (quizForm.q9.value === 'A') score++;
+            if (quizForm.q10.value === 'A') score++;
 
             scoreElement.textContent = `Your score is: ${score} out of ${totalQuestions}`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('question1').style.display = 'block'; // Show the first question initially
             document.getElementById('nextBtn').style.display = 'block';
             updateProgressBar();
         });
